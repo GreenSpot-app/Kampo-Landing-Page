@@ -1,0 +1,118 @@
+:root {
+    --primary: #1B4332;
+    --accent: #FF9F1C;
+    --light: #f4f7f6;
+    --dark: #2E2E2E;
+}
+
+body { 
+font-family: 'Segoe UI', 
+sans-serif; 
+margin: 0; 
+line-height: 1.6; 
+color: var(--dark); 
+scroll-behavior: smooth; 
+}
+
+.navbar { 
+background: var(--primary);
+color: white; 
+display: flex; 
+justify-content: space-between; 
+padding: 1rem 5%; 
+position: fixed; 
+width: 90%; top: 0; 
+z-index: 1000; 
+}
+
+.nav-links { 
+list-style: none; 
+display: flex; 
+gap: 20px; 
+}
+.nav-links a { 
+color: white; 
+text-decoration: none; 
+font-weight: bold; 
+}
+
+.hero { 
+    height: 80vh; 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/fondo-kampo.jpg'); 
+    background-size: cover; 
+    background-position: center;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white; 
+    padding-top: 60px; 
+}
+.section { 
+padding: 80px 10%; 
+text-align: center; 
+}
+.bg-light {
+background: var(--light); 
+}
+.grid { 
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+gap: 30px; 
+margin-top: 40px; 
+}
+
+.card, .price-card { 
+background: white; 
+padding: 30px; 
+border-radius: 10px; 
+box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+}
+.featured { border: 3px solid var(--accent);
+transform: scale(1.05); 
+}
+
+.price { 
+font-size: 2rem; 
+font-weight: bold; 
+color: var(--primary); 
+}
+.price span { font-size: 1rem; 
+color: #777;
+}
+
+button { 
+padding: 12px 24px; 
+border-radius: 5px; cursor: 
+pointer; border: none; 
+font-weight: bold; 
+transition: 0.3s; 
+}
+
+.btn-primary { 
+background: var(--accent); 
+color: white; 
+}
+
+.btn-primary:hover { 
+background: #e68a00; 
+}
+.btn-outline { 
+background: transparent; 
+border: 2px solid var(--primary); 
+color: var(--primary); 
+}
+
+ul { 
+list-style: none; 
+padding: 0; 
+margin: 20px 0; 
+}
+
+footer { 
+background: var(--dark); 
+color: white; 
+text-align: center; 
+padding: 20px; 
+}

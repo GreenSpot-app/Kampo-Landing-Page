@@ -4,61 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KAMPO | Gestión Agrícola Inteligente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">KAMPO</div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <span class="logo-icon">🌱</span>
+            <span class="logo-text">KAMPO</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#planes">Planes</a></li>
             <li><a href="#contacto">Contacto</a></li>
         </ul>
+        <div class="nav-actions">
+            <a href="http://localhost:4200/profile-access/login" class="btn-login">Iniciar Sesión</a>
+            <a href="http://localhost:4200/profile-access/register" class="btn-register">Registrarse</a>
+        </div>
+        <button class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#beneficios" onclick="closeMobileMenu()">Beneficios</a>
+        <a href="#planes" onclick="closeMobileMenu()">Planes</a>
+        <a href="#contacto" onclick="closeMobileMenu()">Contacto</a>
+        <a href="http://localhost:4200/profile-access/login" class="mobile-login">Iniciar Sesión</a>
+        <a href="http://localhost:4200/profile-access/register" class="mobile-register">Registrarse</a>
+    </div>
+
     <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Tu campo en datos, tu negocio en control</h1>
-            <p>Optimiza el riego y la rentabilidad de tus cultivos con tecnología IoT.</p>
-            <button class="btn-primary" onclick="scrollToSection('planes')">Ver Planes</button>
+            <div class="hero-badge">🚜 Tecnología para el agro peruano</div>
+            <h1>Tu campo en datos,<br><span class="accent-text">tu negocio en control</span></h1>
+            <p>Optimiza el riego, monitorea tus cultivos y controla la rentabilidad de tus fundos con tecnología IoT en tiempo real.</p>
+            <div class="hero-actions">
+                <a href="#planes" class="btn-primary">Ver Planes</a>
+                <a href="http://localhost:4200" class="btn-secondary">Explorar App →</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Módulos integrados</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">IoT</span>
+                    <span class="stat-label">Sensores en tiempo real</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Digital y escalable</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Descubre más</span>
+            <div class="scroll-arrow">↓</div>
         </div>
     </header>
 
-    <section id="beneficios" class="section">
-        <h2>¿Por qué elegir KAMPO?</h2>
-        <div class="grid">
-            <div class="card"><h3>Monitoreo IoT</h3><p>Datos de humedad y clima en tiempo real.</p></div>
-            <div class="card"><h3>Rentabilidad</h3><p>Control exacto de ingresos y egresos.</p></div>
-            <div class="card"><h3>Alertas</h3><p>Notificaciones de estrés hídrico al celular.</p></div>
+    <section id="beneficios" class="section benefits-section">
+        <div class="section-header">
+            <span class="section-tag">¿Por qué KAMPO?</span>
+            <h2>Todo lo que necesita tu fundo en un solo lugar</h2>
+            <p>Diseñado para ingenieros agrónomos y gestores agroindustriales del Perú</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit-card" data-delay="0">
+                <div class="benefit-icon">📡</div>
+                <h3>Monitoreo IoT</h3>
+                <p>Sensores de humedad, temperatura y clima conectados en tiempo real.</p>
+                <div class="benefit-tag">Tiempo real</div>
+            </div>
+            <div class="benefit-card" data-delay="100">
+                <div class="benefit-icon">💰</div>
+                <h3>Gestión Financiera</h3>
+                <p>Control exacto de ingresos, egresos y rentabilidad por campaña.</p>
+                <div class="benefit-tag">Rentabilidad</div>
+            </div>
+            <div class="benefit-card" data-delay="200">
+                <div class="benefit-icon">🔔</div>
+                <h3>Alertas Inteligentes</h3>
+                <p>Notificaciones automáticas de estrés hídrico, plagas y anomalías.</p>
+                <div class="benefit-tag">Alertas</div>
+            </div>
+            <div class="benefit-card" data-delay="300">
+                <div class="benefit-icon">🌿</div>
+                <h3>Gestión de Temporadas</h3>
+                <p>Planifica y controla cada campaña agrícola por ciclo productivo.</p>
+                <div class="benefit-tag">Planificación</div>
+            </div>
+            <div class="benefit-card" data-delay="400">
+                <div class="benefit-icon">📦</div>
+                <h3>Control de Inventario</h3>
+                <p>Gestiona insumos, proveedores y órdenes de compra fácilmente.</p>
+                <div class="benefit-tag">Inventario</div>
+            </div>
+            <div class="benefit-card" data-delay="500">
+                <div class="benefit-icon">📊</div>
+                <h3>Reportes Automáticos</h3>
+                <p>Genera reportes técnicos y financieros automáticamente.</p>
+                <div class="benefit-tag">Reportes</div>
+            </div>
         </div>
     </section>
 
-    <section id="planes" class="section bg-light">
-        <h2>Planes de Membresía</h2>
-        <div class="grid">
-            <div class="price-card">
-                <h3>Semilla</h3>
-                <p class="price">S/. 20 <span>/mes</span></p>
-                <ul><li>1 Fundo</li><li>Alertas Básicas</li></ul>
-                <button class="btn-outline">Elegir</button>
+    <section id="planes" class="section plans-section">
+        <div class="section-header">
+            <span class="section-tag">Membresías</span>
+            <h2>Elige el plan para tu operación</h2>
+            <p>Desde pequeños productores hasta grandes agroindustrias</p>
+        </div>
+        <div class="plans-grid">
+            <div class="plan-card">
+                <div class="plan-header">
+                    <span class="plan-icon">🌱</span>
+                    <h3>Semilla</h3>
+                    <p class="plan-desc">Ideal para comenzar</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">S/.</span>
+                    <span class="amount">20</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ 1 Fundo</li>
+                    <li>✓ Alertas Básicas</li>
+                    <li>✓ Gestión de Temporadas</li>
+                    <li class="disabled">✗ Integración IoT</li>
+                    <li class="disabled">✗ Reportes PDF</li>
+                </ul>
+                <a href="http://localhost:4200/profile-access/register" class="btn-plan outline">Elegir Semilla</a>
             </div>
-            <div class="price-card featured">
-                <h3>Cosecha</h3>
-                <p class="price">S/. 45 <span>/mes</span></p>
-                <ul><li>3 Fundos</li><li>Integración IoT</li><li>Reportes PDF</li></ul>
-                <button class="btn-primary">Elegir</button>
+            <div class="plan-card featured">
+                <div class="plan-badge">Más Popular</div>
+                <div class="plan-header">
+                    <span class="plan-icon">🌾</span>
+                    <h3>Cosecha</h3>
+                    <p class="plan-desc">Para operaciones en crecimiento</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">S/.</span>
+                    <span class="amount">45</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ 3 Fundos</li>
+                    <li>✓ Integración IoT</li>
+                    <li>✓ Reportes PDF</li>
+                    <li>✓ Gestión Financiera</li>
+                    <li>✓ Control de Inventario</li>
+                </ul>
+                <a href="http://localhost:4200/profile-access/register" class="btn-plan primary">Elegir Cosecha</a>
             </div>
-            <div class="price-card">
-                <h3>Hacienda</h3>
-                <p class="price">S/. 95 <span>/mes</span></p>
-                <ul><li>Fundos Ilimitados</li><li>Inteligencia Artificial</li></ul>
-                <button class="btn-outline">Elegir</button>
+            <div class="plan-card">
+                <div class="plan-header">
+                    <span class="plan-icon">🏡</span>
+                    <h3>Hacienda</h3>
+                    <p class="plan-desc">Para grandes agroindustrias</p>
+                </div>
+                <div class="plan-price">
+                    <span class="currency">S/.</span>
+                    <span class="amount">95</span>
+                    <span class="period">/mes</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ Fundos Ilimitados</li>
+                    <li>✓ Inteligencia Artificial</li>
+                    <li>✓ Usuarios ilimitados</li>
+                    <li>✓ Dashboard avanzado</li>
+                    <li>✓ Soporte 24/7</li>
+                </ul>
+                <a href="http://localhost:4200/profile-access/register" class="btn-plan outline">Elegir Hacienda</a>
             </div>
         </div>
     </section>
 
-    <footer id="contacto">
-        <p>&copy; 2026 KAMPO - GreenSpot Startup</p>
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2>¿Listo para digitalizar tu fundo?</h2>
+            <p>Únete a KAMPO y toma el control de tu operación agrícola hoy mismo.</p>
+            <div class="cta-actions">
+                <a href="http://localhost:4200/profile-access/register" class="btn-primary large">Comenzar Gratis</a>
+                <a href="http://localhost:4200/profile-access/login" class="btn-secondary large">Ya tengo cuenta</a>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto" class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="logo-icon">🌱</span>
+                <span class="logo-text">KAMPO</span>
+                <p>Gestión Agrícola Inteligente para el Perú</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Plataforma</h4>
+                    <a href="http://localhost:4200">Ingresar a la App</a>
+                    <a href="#planes">Ver Planes</a>
+                    <a href="#beneficios">Beneficios</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Empresa</h4>
+                    <a href="#contacto">Contacto</a>
+                    <a href="#">GreenSpot Startup</a>
+                    <a href="#">UPC — 2026</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 KAMPO — GreenSpot Startup. Todos los derechos reservados.</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>
